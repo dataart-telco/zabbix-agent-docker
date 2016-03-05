@@ -11,5 +11,7 @@ RUN \
   apt-get update; apt-get install zabbix-agent
 
 RUN mkdir -p /etc/my_init.d
+RUN mkdir -p /var/run/zabbix && chmod 777 /var/run/zabbix
 
 ADD files/start_agent.sh /etc/my_init.d/0start_agent.sh
+
